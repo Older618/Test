@@ -55,21 +55,22 @@ console.log('-------------------------------------------------------------------
 //cчитаем гласные/согласные
 function getWordStructure(word){
 let vowel = 0
-let consonants = 0
-let vowels = 'аиеёоуыэюя'
-for (var i = 0; i < word.length; i++) {
+let consonant = 0
+let vowels = 'aeiouy'
+let consonants = 'bcdfghjklmnopqrstvwxz'
+for (let i = 0; i < word.length; i++) {
   if (vowels.indexOf(word[i]) > -1 ) {
     vowel ++;
-  } else {
-      consonants ++
+  } else if (consonants.indexOf(word[i]) > -1 ){
+      consonant ++
   }
 }
-console.log('Слово ',word,' состоит из  ',vowel,' гласных и ',consonants,' согласных букв')
+console.log('Слово ',word,' состоит из  ',vowel,' гласных и ',consonant,' согласных букв')
 }
 //тесты
-getWordStructure('тыква')
-getWordStructure('да')
-getWordStructure('автоматизация')
+getWordStructure('deer')
+getWordStructure('fly')
+getWordStructure('cartoon')
 
 //выводим отсечку для читаемости
 console.log('-------------------------------------------------------------------------------------------')
@@ -77,7 +78,7 @@ console.log('-------------------------------------------------------------------
 //проверка на палиндром
 function isPalindrom(word){
 let temp = ''
-for (var i = word.length - 1; i >=0; i--) {
+for (let i = word.length - 1; i >=0; i--) {
     temp = temp + word[i]
 }
 if (word == temp){
