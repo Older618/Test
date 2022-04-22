@@ -11,13 +11,19 @@ console.log('-------------------------------------------------------------------
 
 //функция возведения в степень числа 2
 function degree(number) {
-    return console.log(Math.pow(2, number))
+    //console.log(Math.pow(2, number))
+    let x = 1
+    for  (let i=1; i <= number; i++){
+        x=x*2
+    }
+return console.log(x)
 }
 //тест
 degree (0)
 degree (1)
 degree (5)
 degree (10)
+degree (50)
 
 //выводим отсечку для читаемости
 console.log('-------------------------------------------------------------------------------------------')
@@ -55,10 +61,10 @@ for (var i = 0; i < word.length; i++) {
   if (vowels.indexOf(word[i]) > -1 ) {
     vowel ++;
   } else {
-      consonants ++;
+      consonants ++
   }
 }
-console.log('Слово ',word,' состоит из  ',vowel,' гласных и ',consonants,' согласных букв');
+console.log('Слово ',word,' состоит из  ',vowel,' гласных и ',consonants,' согласных букв')
 }
 //тесты
 getWordStructure('тыква')
